@@ -17,4 +17,9 @@ public class StudentServiceImpl implements StudentService {
         return StudentVo.fromDto(studentRepository.findById(id));
     }
 
+    @Override
+    public StudentVo findByEqualToName(String name) {
+        return studentRepository.findByEqualToName(name);
+    }
+
 }

@@ -19,3 +19,5 @@
     * [bean-validation-with-spring-boot](https://reflectoring.io/bean-validation-with-spring-boot/)
 
 3. 增加swagger，访问`swagger-ui.html`
+
+4. 利用mockito测试没有实现的方法

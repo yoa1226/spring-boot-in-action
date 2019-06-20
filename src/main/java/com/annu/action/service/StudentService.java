@@ -6,4 +6,6 @@ public interface StudentService {
 
     StudentVo findOne(Long id);
 
+    StudentVo findByEqualToName(String name);
+
 }
