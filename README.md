@@ -17,3 +17,5 @@
     
     * [boot-features-testing](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-testing.html)
     * [bean-validation-with-spring-boot](https://reflectoring.io/bean-validation-with-spring-boot/)
+
+3. 增加swagger，访问`swagger-ui.html`
