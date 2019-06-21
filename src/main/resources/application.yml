@@ -1,2 +1,5 @@
 server:
   port: 8088
+spring:
+  main:
+    banner-mode: "off"

@@ -27,3 +27,6 @@
     * 目前项目重启花费是时间4s左右，热重启是1.5s左右
     * 每次修改文件点击 `build project`,快捷键`command+F9`
     * 更多关于`devtools`访问 [boot-devtools-restart](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-devtools-restart)
+    
+6. `banner`设置，比如禁用`banner`
+    * 更多参考[boot-features-banner](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-banner)
