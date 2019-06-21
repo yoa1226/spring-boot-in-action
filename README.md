@@ -21,3 +21,9 @@
 3. 增加swagger，访问`swagger-ui.html`
 
 4. 利用mockito测试没有实现的方法
+
+5. 热重启
+    
+    * 目前项目重启花费是时间4s左右，热重启是1.5s左右
+    * 每次修改文件点击 `build project`,快捷键`command+F9`
+    * 更多关于`devtools`访问 [boot-devtools-restart](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-devtools-restart)
