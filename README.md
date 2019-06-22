@@ -30,3 +30,6 @@
     
 6. `banner`设置，比如禁用`banner`
     * 更多参考[boot-features-banner](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-banner)
+    
+7. 配置启动环境。
+    * [boot-features-external-config-application-property-files](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-external-config-application-property-files)
