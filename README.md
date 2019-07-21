@@ -33,3 +33,5 @@
     
 7. 配置启动环境。
     * [boot-features-external-config-application-property-files](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-external-config-application-property-files)
+    
+8. 返回值封装和query param校验    

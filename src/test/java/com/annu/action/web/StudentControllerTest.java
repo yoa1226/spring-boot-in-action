@@ -50,4 +50,14 @@ public class StudentControllerTest {
                 .andExpect(status().isOk());
 
     }
+
+
+    @Test
+    public void search() throws Exception {
+        this.mockMvc.perform(get("/students/search")
+                .param("name", "")
+                .accept(MediaType.APPLICATION_JSON_UTF8))
+                .andDo(print())
+                .andExpect(status().isOk());
+    }
 }

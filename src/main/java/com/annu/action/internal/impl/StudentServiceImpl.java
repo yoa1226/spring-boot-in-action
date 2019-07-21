@@ -19,7 +19,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public StudentVo findByEqualToName(String name) {
-        return studentRepository.findByEqualToName(name);
+        return StudentVo.fromDto(studentRepository.findByEqualToName(name));
     }
 
 }

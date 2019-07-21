@@ -1,7 +1,6 @@
 package com.annu.action.internal.repository;
 
 import com.annu.action.internal.dto.StudentDto;
-import com.annu.action.vo.StudentVo;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -17,7 +16,13 @@ public class StudentRepository {
                 .build();
     }
 
-    public StudentVo findByEqualToName(String name) {
-        return null;
+    public StudentDto findByEqualToName(String name) {
+        return StudentDto.builder()
+                .id(1L)
+                .name("nike")
+                .age(18)
+                .address("上海")
+                .school("上海大学")
+                .build();
     }
 }
