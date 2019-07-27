@@ -1,5 +1,6 @@
 package com.annu.action.exception.handler;
 
+import com.annu.action.exception.DefaultException;
 import com.annu.action.vo.ResponseVo;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.validator.internal.engine.ConstraintViolationImpl;
@@ -24,8 +25,8 @@ import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static com.annu.action.vo.BusinessReqState.INTERNAL_SERVICE_ERROR;
-import static com.annu.action.vo.BusinessReqState.REQUEST_PARAM_FAILURE;
+import static com.annu.action.vo.BusinessState.INTERNAL_SERVICE_ERROR;
+import static com.annu.action.vo.BusinessState.REQUEST_PARAM_FAILURE;
 
 @RestControllerAdvice
 @ResponseStatus(HttpStatus.OK)
@@ -91,5 +92,18 @@ public class DefaultHandlerExceptionHandler {
     public ResponseVo<String> handleException(Exception ex) {
         log.error("系统内部异常", ex);
         return ResponseVo.build(INTERNAL_SERVICE_ERROR,ex.getMessage());
+    }
+
+    /**
+     * 处理系统默认异常
+     * @param ex 系统异常信息
+     * @return void
+     */
+    @ExceptionHandler(DefaultException.class)
+    public ResponseVo<Void> defaultHandleException(DefaultException ex){
+        return ResponseVo.<Void>builder()
+                .code(ex.getCode())
+                .msg(ex.getMessage())
+                .build();
     }
 }

@@ -3,7 +3,7 @@ package com.annu.action.vo;
 import lombok.Builder;
 import lombok.Data;
 
-import static com.annu.action.vo.BusinessReqState.SUCCESS;
+import static com.annu.action.vo.BusinessState.SUCCESS;
 
 @Data
 @Builder
@@ -23,7 +23,7 @@ public class ResponseVo<T> {
                 .build();
     }
 
-    public static <T> ResponseVo<T> build(BusinessReqState state, T data) {
+    public static <T> ResponseVo<T> build(BusinessState state, T data) {
         return ResponseVo.<T>builder()
                 .code(state.getCode())
                 .msg(state.getMsg())

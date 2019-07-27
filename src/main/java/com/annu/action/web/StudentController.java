@@ -14,7 +14,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 
 @RestController
-@RequestMapping("/students")
+@RequestMapping("students")
 @Api(value = "学生操作接口")
 @Validated
 public class StudentController {
