@@ -17,6 +17,7 @@
     <properties>
         <java.version>12</java.version>
         <swagger2.version>2.9.2</swagger2.version>
+        <common-lang.version>2.6</common-lang.version>
     </properties>
 
     <dependencies>
@@ -38,6 +39,11 @@
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
             <version>${swagger2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>${common-lang.version}</version>
         </dependency>
         <dependency>
             <groupId>io.springfox</groupId>
