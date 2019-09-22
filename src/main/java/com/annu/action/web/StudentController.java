@@ -10,8 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 
 @RestController
 @RequestMapping("students")
@@ -39,4 +41,9 @@ public class StudentController {
         return ResponseVo.success(studentService.findByEqualToName(name));
     }
 
+    @GetMapping(value = "export",produces = "text/csv")
+    @ApiOperation("CSV导出学生数据信息")
+    public void export(@Validated @NotEmpty @RequestParam("name") String name, HttpServletResponse response) {
+        studentService.export(name, response);
+    }
 }

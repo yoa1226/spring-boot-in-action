@@ -46,4 +46,14 @@ public class StudentControllerTest extends ControllerTest{
                 .andDo(print())
                 .andExpect(status().isOk());
     }
+
+    //test failed. please use chrome
+    @Test
+    public void export() throws Exception {
+        this.mockMvc.perform(get("/students/export")
+                .param("name", "nike")
+                .accept(MediaType.APPLICATION_JSON_UTF8))
+                .andDo(print())
+                .andExpect(status().isOk());
+    }
 }

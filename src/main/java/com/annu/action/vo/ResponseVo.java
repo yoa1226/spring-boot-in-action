@@ -23,6 +23,13 @@ public class ResponseVo<T> {
                 .build();
     }
 
+    public static ResponseVo<Void> success() {
+        return ResponseVo.<Void>builder()
+                .code(SUCCESS.getCode())
+                .msg(SUCCESS.getMsg())
+                .build();
+    }
+
     public static <T> ResponseVo<T> build(BusinessState state, T data) {
         return ResponseVo.<T>builder()
                 .code(state.getCode())

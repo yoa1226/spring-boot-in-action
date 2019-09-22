@@ -6,8 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang.ArrayUtils;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.ArrayUtils;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -18,8 +17,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
-import org.springframework.validation.BeanPropertyBindingResult;
+import org.springframework.validation.AbstractBindingResult;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import java.util.*;
 
@@ -47,16 +49,10 @@ public class ApiLogAspect {
 
         WebLogDto logDto = WebLogDto.builder()
                 .httpMethod(request.getMethod())
-                .path(request.getRequestURI() + "?" + request.getQueryString())
+                .path(request.getRequestURI())
                 .header(this.extractHeader(request))
                 .parameter(this.extractParameters(point))
                 .build();
-        String queryString = request.getQueryString();
-        if (StringUtils.isNotEmpty(queryString)) {
-            logDto.setPath(request.getRequestURI() + "?" + queryString);
-        } else {
-            logDto.setPath(request.getRequestURI());
-        }
         log.info("Api日志-请求：logDto = {}", JsonUtils.OBJECT_MAPPER.writeValueAsString(logDto));
         Object proceed;
         try {
@@ -85,7 +81,8 @@ public class ApiLogAspect {
 
         List<Object> param = new ArrayList<>(5);
         for (Object arg : args) {
-            if (arg instanceof BeanPropertyBindingResult || arg instanceof HttpServletRequest) {
+            if (arg instanceof AbstractBindingResult || arg instanceof ServletRequest
+                    || arg instanceof ServletResponse || arg instanceof MultipartFile) {
                 continue;
             }
             if (arg instanceof List) {

@@ -17,7 +17,8 @@
     <properties>
         <java.version>12</java.version>
         <swagger2.version>2.9.2</swagger2.version>
-        <common-lang.version>2.6</common-lang.version>
+        <common-lang3.version>3.3.2</common-lang3.version>
+        <opencsv.version>4.6</opencsv.version>
     </properties>
 
     <dependencies>
@@ -41,9 +42,14 @@
             <version>${swagger2.version}</version>
         </dependency>
         <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
-            <version>${common-lang.version}</version>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${common-lang3.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>${opencsv.version}</version>
         </dependency>
         <dependency>
             <groupId>io.springfox</groupId>
