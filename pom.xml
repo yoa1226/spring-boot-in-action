@@ -16,7 +16,7 @@
 
     <properties>
         <java.version>12</java.version>
-        <swagger2.version>2.9.2</swagger2.version>
+        <swagger2.version>2.10.0</swagger2.version>
         <common-lang3.version>3.3.2</common-lang3.version>
         <opencsv.version>4.6</opencsv.version>
     </properties>
